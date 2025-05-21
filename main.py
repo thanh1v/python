@@ -31,8 +31,7 @@ class TikTokScrapper:
     # Sau khi xác nhạn đúng link TikTok thì mới lấy các thông tin như id và name .....
     def get_data(self):
         
-        # Ở đây e dùng cookie để login vào tiktok, pass qua mọi capcha =))
-        # \\<('') TikTok e sạch lắm, k có lắc đuýt các thứ đâu ('')>//
+        # Ở đây e dùng cookie để login vào tiktok, pass qua mọi capcha =))/
         headers = {
             "accept": "*/*",
             "accept-language": "vi,en;q=0.9,en-GB;q=0.8,en-US;q=0.7",
@@ -153,12 +152,13 @@ class TikTokScrapper:
                         print(f'Lưu thành công vào {video_name}')
 
         except requests.RequestException as e:
-            print('Lỗi khi tải video:', e)
+            print('Lỗi khi lưu video:', e)
 
 
 
 if __name__ == '__main__' :
-    url = 'https://www.tiktok.com/@duyyy.real.channel/video/7504660594465770770'
+    url = " "
+    # Ví dụ: url = "https://www.tiktok.com/@duyyy.real.channel/video/7504660594465770770"
     scrap = TikTokScrapper(url)
     scrap.check_url()
     scrap.get_data()
